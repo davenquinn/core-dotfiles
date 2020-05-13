@@ -8,6 +8,15 @@ cd "$dn"
 for f in $(ls .); do
   fp="$dn/$f"
   out="$HOME/.$f"
-  echo "$fp -> $out"
-  ln -sf "$fp" "$out"
+  if [ -L "$out" ]; then
+    # Remove existing symlinks
+    rm -f "$out"
+  fi
+
+  if [ -e "$out" ]; then
+    echo "$out exists and is not a symlink: refusing to overwrite"
+  else
+    echo "$fp -> $out"
+    ln -sf "$fp" "$out"
+  fi
 done
