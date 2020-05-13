@@ -1,6 +1,10 @@
 set nocompatible
 let mapleader = ","
 
+" Don't load netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
+
 " Vim-EasyMotion:
 " navigate words with <Leader><Leader>,
 
