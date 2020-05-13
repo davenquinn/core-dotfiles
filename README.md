@@ -1,2 +1,3 @@
-# core-dotfiles
+# Core shell config
+
 Compact dotfiles for minimal systems

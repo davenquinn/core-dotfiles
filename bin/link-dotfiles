@@ -1,0 +1,12 @@
+#!/bin/bash
+
+root=$(git rev-parse --show-toplevel)
+
+dn="$root/dotfiles"
+
+cd "$dn"
+for f in $(ls .); do
+  fp="$dn/$f"
+  echo $fp
+  ln -sf "$fp" "$HOME/.$f"
+done
