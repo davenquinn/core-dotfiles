@@ -7,6 +7,7 @@ dn="$root/dotfiles"
 cd "$dn"
 for f in $(ls .); do
   fp="$dn/$f"
-  echo $fp
-  ln -sf "$fp" "$HOME/.$f"
+  out="$HOME/.$f"
+  echo "$fp -> $out"
+  ln -sf "$fp" "$out"
 done
