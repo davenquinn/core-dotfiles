@@ -30,4 +30,7 @@ else
 instructions for your platform: https://github.com/github/hub#installation"
 fi
 
-
+poetry=$HOME/.poetry
+if [ -d "$poetry" ]; then
+  export PATH="$poetry/bin:$PATH"
+fi
