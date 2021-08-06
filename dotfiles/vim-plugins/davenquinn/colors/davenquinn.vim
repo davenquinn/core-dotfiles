@@ -35,6 +35,8 @@ hi InterpDelim gui=none guifg=#000000
 "syn cluster Interp add=coffeeInterp,jsTemplateExpression
 "syn cluster InterpDelim add=coffeeInterpDelim,jsTemplateBraces
 
+hi pandocEmphasis gui=italic cterm=italic font=FiraCode-SemiBold
+
 let g:colors_name = "davenquinn"
 if &background == "light"
     hi Boolean gui=NONE guifg=#707070 guibg=NONE

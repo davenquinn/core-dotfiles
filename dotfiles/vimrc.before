@@ -158,8 +158,7 @@ let g:goyo_width = 85
 function! s:goyo_enter()
   set noshowmode
   set noshowcmd
-  Limelight 0.75
-  Thematic writer
+  "Limelight 0.75
   GitGutterDisable
   " ...
 endfunction
@@ -167,8 +166,8 @@ endfunction
 function! s:goyo_leave()
   set showmode
   set showcmd
-  Limelight!
-  Thematic default_theme
+  "Limelight!
+  "Thematic default_theme
   GitGutterEnable
   " ...
 endfunction
