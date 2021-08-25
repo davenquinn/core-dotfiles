@@ -262,3 +262,6 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 
 " Disable annoying autocomplete
 let g:jedi#auto_initialization = 0
+
+" Prettier
+let g:prettier#autoformat = 1
