@@ -39,18 +39,18 @@ fi
 
 echo "Extracting $SUBDIR from $REPO:$BRANCH to $NEWREPO";
 
+
 git clone "$REPO" "$NEWREPO"
 
 cd "$NEWREPO"
 
 git status
 
+echo "Extracting directory"
+git filter-repo --subdirectory-filter $SUBDIR
+
 echo "Breaking link with parent repository"
 git remote rm origin
-
-echo "Extracting directory"
-git filter-branch --prune-empty --subdirectory-filter "$SUBDIR" $BRANCH
-git remove-backup $BRANCH
 
 cd "$START"
 
