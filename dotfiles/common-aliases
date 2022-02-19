@@ -22,15 +22,6 @@ else
   alias vim="vim -v"
 fi
 
-# Git/GitHub integrations
-if hash hub 2> /dev/null; then
-  eval "$(hub alias -s)"
-else
-  echo "You should install the 'hub' git wrapper using the
-instructions for your platform: https://github.com/github/hub#installation"
-fi
-
-poetry=$HOME/.poetry
 if [ -d "$poetry" ]; then
   export PATH="$poetry/bin:$PATH"
 fi
