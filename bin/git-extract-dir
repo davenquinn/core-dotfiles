@@ -47,7 +47,7 @@ cd "$NEWREPO"
 git status
 
 echo "Extracting directory"
-git filter-repo --subdirectory-filter $SUBDIR
+git filter-repo --force --subdirectory-filter $SUBDIR
 
 echo "Breaking link with parent repository"
 git remote rm origin
