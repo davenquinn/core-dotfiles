@@ -21,5 +21,3 @@ for f in $(ls .); do
   fi
 done
 
-# Install starship shell prompt
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"

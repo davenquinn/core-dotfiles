@@ -1,0 +1,35 @@
+# Install starship shell prompt
+
+# Install github shell utilities
+if ! command -v starship &> /dev/null ; then
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+fi
+
+if ! command -v gh &> /dev/null ; then
+  echo "Trying to install the GitHub CLI..."
+  # Try installing gh
+  if command -v apt &> /dev/null ; then
+    # Install GH for Ubuntu
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+      | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
+      | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+    sudo apt update
+    sudo apt install gh
+  elif command -v brew &> /dev/null ; then
+    brew install gh
+  fi
+fi
+
+if ! command -v ranger &> /dev/null ; then
+  echo "Trying to install ranger..."
+  # Try installing gh
+  if command -v apt &> /dev/null ; then
+    sudo apt update
+    sudo apt install ranger
+  elif command -v brew &> /dev/null ; then
+    brew install ranger
+  fi
+fi
+
+
