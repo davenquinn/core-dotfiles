@@ -13,6 +13,9 @@ nnoremap \ :noh<return><esc>
 " Remaps semicolon to the command leader (may change back to <space>)
 noremap <space> :
 
+" Make things always copy to system clipboard
+set clipboard=unnamed
+
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*

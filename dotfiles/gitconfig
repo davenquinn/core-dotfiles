@@ -26,6 +26,9 @@
 	p = !"git pull; git submodule foreach git pull origin master"
   # Or update all submodules
   up = submodule update --init --recursive
+
+  push-all = push --recurse-submodules=on-demand
+
 	# Clone a repository including all submodules
 	c = clone --recursive
 
