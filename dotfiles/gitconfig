@@ -23,11 +23,14 @@
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
 	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
+  p = !"git pull; git submodule foreach git pull origin master"
+
+  push-all = "! find . -depth -name .git -exec dirname {} \\; 2> /dev/null | sort -n -r | xargs -I{} bash -c \"cd {}; git status | grep ahead > /dev/null && { echo '* Pushing: {}'; git push; }\""
+
   # Or update all submodules
   up = submodule update --init --recursive
 
-  push-all = push --recurse-submodules=on-demand
+  push-recursive = push --recurse-submodules=on-demand
 
 	# Clone a repository including all submodules
 	c = clone --recursive
@@ -191,7 +194,7 @@
 
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/usr/local/bin/gh auth git-credential
 
 
 [filter "lfs"]
@@ -207,3 +210,6 @@
 	trustExitCode = true
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential

@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+new_url="$(git remote get-url $1 | sed 's/^git:\/\/github.com/https:\/\/github.com/g')"
+
+echo "Setting url for remote $1 to $new_url"
+
+git remote set-url $1 "$new_url"
+
