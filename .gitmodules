@@ -1,12 +1,12 @@
 [submodule "dotfiles/vim"]
 	path = dotfiles/vim
-	url = git://github.com/davenquinn/janus.git
+	url = https://github.com/davenquinn/janus.git
 [submodule "dotfiles/vim-plugins/csapprox"]
 	path = dotfiles/vim-plugins/csapprox
-	url = git://github.com/godlygeek/csapprox.git
+	url = https://github.com/godlygeek/csapprox.git
 [submodule "dotfiles/vim-plugins/vimfiler.vim"]
 	path = dotfiles/vim-plugins/vimfiler.vim
-	url = git://github.com/Shougo/vimfiler.vim.git
+	url = https://github.com/Shougo/vimfiler.vim.git
 [submodule "dotfiles/vim-plugins/unite.vim"]
 	path = dotfiles/vim-plugins/unite.vim
-	url = git://github.com/Shougo/unite.vim.git
+	url = https://github.com/Shougo/unite.vim.git
