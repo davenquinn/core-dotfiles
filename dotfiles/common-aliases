@@ -25,3 +25,10 @@ fi
 if [ -d "$poetry" ]; then
   export PATH="$poetry/bin:$PATH"
 fi
+
+function omcalc {
+  fmt=${2:-.2e}
+  printf "$1 = "
+  python -c "print(f\"{$1:$fmt}\")"
+}
+
