@@ -5,7 +5,7 @@
 [alias]
 
   # Makes a pretty chart
-  graph = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(bold cyan)%d%Creset %s %Cgreen(%cr)%Creset [%C(blue)%an%Creset]' --abbrev-commit
+  grr = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(bold cyan)%d%Creset %s %Cgreen(%cr)%Creset [%C(blue)%an%Creset]' --abbrev-commit
 
   # Execute a command at git root
   exec = !"exec "
@@ -200,7 +200,7 @@
 
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 
 
 [filter "lfs"]
@@ -218,6 +218,6 @@
 	useHttpPath = true
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/local/bin/gh auth git-credential
+	helper = !/opt/homebrew/bin/gh auth git-credential
 [init]
 	defaultBranch = main

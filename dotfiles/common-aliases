@@ -5,7 +5,7 @@ function wow {
   [ $? != 0 ] && echo -e "Try running this \033[1min a repository\033[0m."
 }
 
-alias grr='git graph'
+alias grr='git grr'
 alias such='git add'
 alias very='git commit -m'
 alias text-changes='git diff --color-words'
@@ -22,13 +22,26 @@ else
   alias vim="vim -v"
 fi
 
-if [ -d "$poetry" ]; then
-  export PATH="$poetry/bin:$PATH"
-fi
-
 function omcalc {
   fmt=${2:-.2e}
   printf "$1 = "
   python -c "print(f\"{$1:$fmt}\")"
 }
 
+function git-delete-branch {
+  git branch -d $1
+  # Fail if the branch is not merged
+  if [ $? -ne 0 ]; then
+    echo "Branch not merged. Use -D to force delete."
+    return 1
+  fi
+
+  echo "Deleted local branch $1"
+
+  git push origin --delete $1
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to delete remote branch origin/$1"
+    return 1
+  fi
+}
