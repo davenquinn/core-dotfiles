@@ -1,6 +1,6 @@
 [user]
 	name = Daven Quinn
-	email = dev@davenquinn.com
+	email = code@davenquinn.com
 
 [alias]
 
@@ -221,3 +221,7 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
+[http]
+	postBuffer = 157286400
