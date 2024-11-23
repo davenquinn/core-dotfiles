@@ -2,7 +2,12 @@ noremap <silent> <Leader>f :bp \| :VimFilerBufferDir  -auto-cd -create<CR>
 
 set statusline+=%{fugitive\#statusline()}
 "set guifont=DroidSansMonoDotted:h14
+"colorscheme davenquinn
+
+set termguicolors
 colorscheme davenquinn
+set background=dark
+
 
 if has("gui_macvim")
   set macligatures
@@ -64,7 +69,8 @@ if has("gui_macvim")
 
 endif
 
-"set guifont=SourceCodePro-Regular:h14
+" GUI settings
+set guifont=SourceCodePro-Regular:h14
 set guifont=IBMPlexMono-Regular:h13
 set background=dark
 set linespace=2
